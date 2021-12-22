@@ -33,18 +33,24 @@ d = X_train.shape[1]
 N = X_train.shape[0]
 
 # Initialisation des poids
-# Distribution normal
+# Zero
+Wy = np.zeros((L, K))
+by = np.zeros((1, K))
+Wh = np.zeros((d, L))
+bh = np.zeros((1, L))
+
+# Distribution normale
 #Wy = np.random.normal(0, 0.1, (L, K))
 #by = np.random.normal(0, 0.1, (1, K))
 #Wh = np.random.normal(0, 0.1, (d, L))
 #bh = np.random.normal(0, 0.1, (1, L))
 
 # Xavier
-sigma_Xav = 1/np.sqrt(784)
-Wy = np.random.normal(0, sigma_Xav,(L,K))
-by = np.random.normal(0, sigma_Xav,(1,K))
-Wh = np.random.normal(0, sigma_Xav,(d,L))
-bh = np.random.normal(0, sigma_Xav,(1,L))
+#sigma_Xav = 1/np.sqrt(784)
+#Wy = np.random.normal(0, sigma_Xav,(L,K))
+#by = np.random.normal(0, sigma_Xav,(1,K))
+#Wh = np.random.normal(0, sigma_Xav,(d,L))
+#bh = np.random.normal(0, sigma_Xav,(1,L))
 
 # Nombre d'itérations
 numEp = 100
