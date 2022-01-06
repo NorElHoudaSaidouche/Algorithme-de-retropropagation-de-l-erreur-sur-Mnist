@@ -24,7 +24,7 @@ print(X_test.shape[0], 'test samples')
 
 # Convertion des vecteurs de classe en matrices de classe binaires
 K = 10  # Nombre de classe
-L = 50
+L = 100
 Y_train = np_utils.to_categorical(y_train, K)
 Y_test = np_utils.to_categorical(y_test, K)
 # Taille de l'image (28*28 = 784 pixels)
@@ -34,10 +34,10 @@ N = X_train.shape[0]
 
 # Initialisation des poids
 # Zero
-Wy = np.zeros((L, K))
-by = np.zeros((1, K))
-Wh = np.zeros((d, L))
-bh = np.zeros((1, L))
+#Wy = np.zeros((L, K))
+#by = np.zeros((1, K))
+#Wh = np.zeros((d, L))
+#bh = np.zeros((1, L))
 
 # Distribution normale
 #Wy = np.random.normal(0, 0.1, (L, K))
@@ -46,11 +46,11 @@ bh = np.zeros((1, L))
 #bh = np.random.normal(0, 0.1, (1, L))
 
 # Xavier
-#sigma_Xav = 1/np.sqrt(784)
-#Wy = np.random.normal(0, sigma_Xav,(L,K))
-#by = np.random.normal(0, sigma_Xav,(1,K))
-#Wh = np.random.normal(0, sigma_Xav,(d,L))
-#bh = np.random.normal(0, sigma_Xav,(1,L))
+sigma_Xav = 1/np.sqrt(784)
+Wy = np.random.normal(0, sigma_Xav,(L,K))
+by = np.random.normal(0, sigma_Xav,(1,K))
+Wh = np.random.normal(0, sigma_Xav,(d,L))
+bh = np.random.normal(0, sigma_Xav,(1,L))
 
 # Nombre d'itérations
 numEp = 100
